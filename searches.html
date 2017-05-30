@@ -1,0 +1,244 @@
+<style>
+
+	.btn-group>.dropdown-toggle
+	{
+		background: url('images/dropdown.jpg')
+	}
+	  .quicksearch>.dropdown-toggle
+	  {
+	  	background: none!important;
+	  }
+</style>
+<div class="searches" id="sort">
+
+<div class="row"><div class="col-xs-12">
+    <center>
+        <h2>Adjust settings to see the most suitable offers!</h2>
+    </center><br>
+</div></div>
+<div class="row">	
+<form id="form">
+<div class="col-md-4" style="background-color: #f9f9f9;padding-right:0;">
+	<div class="col-sm-12" style="padding-right:0;"><div class="summary-item padding-left-20 padding-right-20" style="">
+		<h3 style="padding-top: 10px">Summary</h3>
+			<div class="row padding-bottom-20">
+				<div class="col-sm-12 padding-bottom-xs-15 border-bottom" style=" padding-bottom: 20px">
+					<p> <label for="amount_apr">Max APR:</label> </p>
+					 <input  data-inline="true" type="text" size="7" id="amount_apr" readonly style="border:0; color:rgb(62, 75, 59); font-weight:bold; text-align: center; background-color:#8bc34a; margin-bottom: 10px"> 
+					<div id="slider-apr"></div>
+				</div>
+				
+				<div class="col-sm-12 padding-bottom-xs-15 border-bottom" style="margin-top: 10px;  padding-bottom: 20px">
+					<p> <label for="amount_loan">Desired Loan Amount:</label> </p>
+					 <input type="text" size="7" id="amount_loan" readonly style="border:0; color:rgb(62, 75, 59); font-weight:bold; text-align: center; background-color:#8bc34a; margin-bottom: 10px"> 
+					<div id="slider-loan-amount"></div>
+				</div>
+				<br>
+				<div class="col-sm-12 border-bottom" style="margin-top: 10px;  padding-bottom: 20px">
+					<p> <label for="amount_minapr">Min APR:</label> </p>
+					 <input type="text" size="4" id="amount_minapr" readonly style="border:0; color:rgb(62, 75, 59); font-weight:bold; text-align: center; background-color:#8bc34a; margin-bottom: 10px"> 
+					<div id="slider-min-apr"></div>
+				</div>
+			</div>
+	</div></div>
+	
+	<div class="col-sm-12 " style="padding-right:0;"><div class="summary-item padding-left-20 padding-right-20">
+		<h3 style="margin-top: 0;">Fees</h3>
+			<div class="row padding-bottom-20 border-bottom">
+				<div class="col-sm-12 padding-right-20">
+					<p> <label for="amount_fee">Max Origination Fee:</label>  <input type="text" size="7" id="amount_fee" readonly style="border:0; color:rgb(62, 75, 59); font-weight:bold; text-align: center; background-color:#8bc34a"> </p>
+					<div id="slider-fee"></div>
+				</div>
+			</div>
+	</div></div>	
+
+	<div class="col-sm-12 " style="padding-right:0;"><div class="summary-item padding-left-20 padding-right-20">
+		<h3 style="padding-top: 20px; margin-top: 0;">Eligible Borrowers</h3>
+			<div class="row border-bottom">
+				<div class="col-xs-12">
+					<div class="checkbox">
+						<label>
+							<p><input type="checkbox" class="form_param" name="LendToMilitary"> Lend To Military? <span></span></p>
+						</label>
+					</div>			
+				</div>			
+			</div>			
+			<!--div class="row padding-bottom-20">
+				<div class="col-sm-12 padding-right-20">
+					<p> <label for="amount_minincome">Minimum Income:</label>  <input type="text" size="1" id="amount_minincome" readonly style="border:0; color:rgb(62, 75, 59); font-weight:bold; text-align: center;"> </p>
+					<div id="slider-min-income"></div>
+				</div>
+			</div-->
+	</div></div>
+	
+	<div class="col-sm-12 " style="padding-right:0;"><div class="summary-item padding-left-20">
+		<div>
+			<h3 style="padding-top: 20px; margin-top: 0">Credit Bureau Reporting</h3>
+			<div class="row border-bottom">
+				<div class="col-xs-12">
+					<div class="checkbox">
+						<label>
+							<p><input type="checkbox" class="form_containsparam" basename="CreditBureauReporting" name="Equifax"> Equifax <span></span></p>
+						</label>
+					</div>	
+					<div class="checkbox">
+						<label>
+							<p><input type="checkbox" class="form_containsparam" basename="CreditBureauReporting" name="Experian"> Experian <span></span></p>
+						</label>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<div class="checkbox">
+						<label>
+							<p><input type="checkbox" class="form_containsparam" basename="CreditBureauReporting" name="TransUnion"> TransUnion <span></span></p>
+						</label>
+					</div>	
+					<div class="checkbox">
+						<label>
+							<p><input type="checkbox" class="form_containsparam" basename="CreditBureauReporting" name="Other"> Other <span></span></p>
+						</label>
+					</div>						
+				</div>
+			</div>
+		</div>
+	</div></div>
+	
+	<div class="col-sm-12 " style="padding-right:0;"><div class="summary-item padding-left-20">
+		<h3 style="padding-top: 20px;margin-top: 0;">Funding Timeline</h3>
+		<div class="row border-bottom">
+			<div class="col-xs-12">
+				<div class="checkbox">
+					<label>
+						<p><input type="checkbox" class="form_param" name="Minutes"> Minutes <span></span></p>
+					</label>
+				</div>	
+				<div class="checkbox">
+					<label>
+						<p><input type="checkbox" class="form_param" name="SameDay"> Same Day <span></span></p>
+					</label>
+				</div>						
+			</div>
+			<div class="col-xs-12">
+				<div class="checkbox">
+					<label>
+						<p><input type="checkbox" class="form_param" name="Days17" > 1-7 days <span></span></p>
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<p><input type="checkbox" class="form_param" name="Weeks24"> 2-4 weeks <span></span></p>
+					</label>
+				</div>							
+			</div>
+		</div>
+	</div></div>
+	
+		<div class="col-sm-12 " style="padding-right:0;"><div class="summary-item padding-left-20">
+			<h3 style="padding-top: 20px; margin-top: 0;">Features</h3>
+			<div class="row border-bottom">
+				<div class="col-xs-12">
+					<div class="padding-left-0">
+						<div class="checkbox">
+							<label>
+								<p><input type="checkbox" class="form_param" name="NoOriginationFee"> No Origination Fee <span></span></p>
+							</label>
+						</div>							
+					</div>
+					<div class="padding-left-0">
+						<div class="checkbox">
+							<label>
+								<p><input type="checkbox" class="form_param" name="NoPrepaymentFee"> No Prepayment Fee <span></span></p>
+							</label>
+						</div>							
+					</div>
+					<div class="padding-bottom-20 padding-left-0">
+						<div class="checkbox">
+							<label>
+								<p><input type="checkbox" class="form_param" name="PreApprovedSoftCreditInquiry"> Pre-Approved Soft Credit Inquiry <span></span></p>
+							</label>
+						</div>							
+					</div>
+				</div>
+			</div>
+		</div></div>
+		
+		<div class="col-sm-12 " style="padding-right:0;"><div class="summary-item padding-left-20">
+			<h3 style="padding-top: 20px; margin-top: 0;">Loan Type</h3>
+			<div class="row border-bottom">
+				<div class="col-xs-12">
+					<div class="checkbox">
+						<label>
+							<p><input type="checkbox" class="form_param" name="LeasePurchase">Lease Purchase <span></span></p>
+						</label>
+					</div>	
+					<div class="checkbox">
+						<label>
+							<p><input type="checkbox" class="form_param" name="NewLoan"> New Loan <span></span></p>
+						</label>
+					</div>						
+				</div>
+				<div class="col-xs-12">
+					<div class="checkbox">
+						<label>
+							<p><input type="checkbox" class="form_param" name="Refinance"> Refinance <span></span></p>
+						</label>
+					</div>	
+					<div class="checkbox">
+						<label>
+							<p><input type="checkbox" class="form_param" name="UsedCarLoan"> Used Car Loan <span></span></p>
+						</label>
+					</div>	
+				</div>
+			</div>
+		</div></div>
+
+	<div class="col-sm-12 " style="padding-right:0;"><div class="summary-item padding-left-20">
+			<div class="padding-bottom-20">
+				<h3 style="padding-top: 20px; margin-top: 0;">Institution Type</h3>
+				<div class="row border-bottom">
+					<div class="col-lg-12" class="padding-left:0">
+						<select class="selectpicker not-set-filter" basename="InstitutionType" data-selected-text-format="count > 2" data-width="130px">
+							<option>Not set</option>							
+							<option>Bank</option>
+							<option>Credit Union</option>
+							<option>Direct Lender</option>
+							<option>Marketplace Lender</option>
+							<option>Other</option>							
+						</select>						
+					</div>
+				</div>
+			</div>
+	</div></div>		
+			
+	
+	<div class="col-xs-12 col-sm-12" style="padding-right:0;">
+		<div class="padding-top-20"><div class="summary-item">
+			<center><div class="padding-bottom-20 found_result">
+               <div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<h3 style="padding-top: 20px; margin-top: 0;">Found <code class="padding-left-10 margin-left-5 margin-right-5 padding-right-10" id="total_companies">{TOTAL_COMPANIES}</code> companies</h3>
+					<br>
+					<center><a href="./loans.html" class="a-btn btn_filter" style="padding:10px 105px 10px 90px!important; width: 50%;" onclick="DoSearch()">
+                              <span class="a-btn-symbol a-btn-symbol-filter" style="font-size: 24px">
+                              <i class="fa fa-filter" aria-hidden="true"></i>
+
+                              </span> 
+                              <span class="a-btn-text" style="font-size: 19px"><center>Filter</center> </span> 
+                    </a>
+					</center>
+				
+				</div>
+				</div>
+				<br>
+				<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<a class="btn btn-warning btn-lg show_all" style="background-color: #516f8c!important; color: white!important; border-radius: 0px!important" onclick="drawLoans(true)">Show me All of them! &nbsp; </a>
+				</div>
+				</div>
+
+			
+			</div></center>
+		</div></div>
+	</div>
+	</div>	
+</form>

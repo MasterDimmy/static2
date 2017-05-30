@@ -1,0 +1,59 @@
+		<!-- modal window: add a review-->
+		<div class="modal fade" id="addReviewForm" role="dialog" data-keyboard="true" data-backdrop="static" tabindex='-1'>
+		<div class="modal-dialog addreview">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h4 class="modal-title" id="modal_title">Review for : "<span id="company_name" style="color:darkgreen"></span>"</h4>
+			</div>
+			<div class="modal-body">
+			
+			<div class="grey-bg" id="reviewForm">
+				<div >
+				  <div class="col-sm-12" style="background: #fff;">
+						<center><div>
+								<img id="company_logo" src="" class="img-responsive" />
+						</div></center>
+				  </div>
+				  <div class="form-group" style="background: #fff;" ><div class="control-group">
+					<div class="padding-top-20" title="Set star for the company, please" style="padding-bottom: 20px;"><center>
+						<span class="stars" id="new_review_stars">
+							<i class="fa fa-star star_chooser" onclick="StarClick(1);" id="addReviewStar1"></i>
+							<i class="fa fa-star star_chooser" onclick="StarClick(2);" id="addReviewStar2"></i>
+							<i class="fa fa-star star_chooser" onclick="StarClick(3);" id="addReviewStar3"></i>
+							<i class="fa fa-star star_chooser" onclick="StarClick(4);" id="addReviewStar4"></i>
+							<i class="fa fa-star star_chooser" onclick="StarClick(5);" id="addReviewStar5"></i>
+						</span>
+					</center></div>
+
+						<div class="form-horizontal"><div class="control-group w2ui-required">
+							<label for="author" class="col-sm-6 control-label" style="text-align: center;     padding-top: 2em;">
+							Your name</label>
+							<div class="col-sm-6 padding-right-0" style="padding-top: 2em;">
+								<input type="text" class="form-control" name="author" id="author" placeholder="Name yourself, please" value="Anonymous"/>
+							</div>
+						</div></div>
+						
+				  </div> </div>
+				  	<div id="captcha_group" style="width:100%"><div class="form-group"><div class="control-group">
+							<div class="col-sm-6">
+							<img alt="captchaimg" id="captchaimg" src="" onclick="reloadCaptcha();" title="Click to reload captcha">
+							</div>
+							<div class="col-sm-6 padding-top-20" style="padding-right:0">
+							<input type="text" class="form-control" name="captcha" id="captcha" placeholder="Enter captcha numbers here"/>
+							</div>
+					</div></div></div>
+				  <div class="form-group"><div class="control-group">
+					<textarea class="form-control" rows="5" id="text" name="text" placeholder="Write anywhat you think about the company"></textarea>
+				  </div> </div>
+				  <input type="hidden" name="rid" id="rid" value="0"/>
+				</div>
+				<div class="modal-footer" id="close" style="background: #f9f9f9;">
+					<button type="submit" class="btn btn-success" name="save" id="save" onclick="SaveOrAddReview();">Add</button>
+					<button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+				 </div>
+			</div>
+			
+			</div>
+		  </div>
+		</div>
+		</div>

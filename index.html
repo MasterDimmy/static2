@@ -1,0 +1,224 @@
+<<!-HEADER->>
+<body class="v2 index">
+	<<!-NAV->>
+ 
+
+ <!-- #region Jssor Slider Begin -->
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/jssor.slider-23.1.6.mini.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+             var jssor_1_SlideoTransitions = [
+              [{b:900,d:2000,x:-379,e:{x:7}}],
+              [{b:900,d:2000,x:-379,e:{x:7}}],
+              [{b:-1,d:1,o:-1,sX:2,sY:2},{b:0,d:900,x:-171,y:-341,o:1,sX:-2,sY:-2,e:{x:3,y:3,sX:3,sY:3}},{b:900,d:1600,x:-283,o:-1,e:{x:16}}]
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $SlideDuration: 800,
+              $SlideEasing: $Jease$.$OutQuint,
+              $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*responsive code begin*/
+            /*remove responsive code if you don't want the slider scales while window resizing*/
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1920);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            /*responsive code end*/
+        });
+    </script>
+    <style>
+    #custom_state_styles {
+    margin-top: 5px;
+    z-index: 100000;
+    padding-left: 10px;
+    margin-right: 0px!important;
+}
+        /* jssor slider bullet navigator skin 05 css */
+        .jssora22l, .jssora22r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 58px;
+            cursor: pointer;
+            background: url('img/a22.png') center center no-repeat;
+            overflow: hidden;
+        }
+             /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('img/b05.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        /* jssor slider arrow navigator skin 22 css */
+        /*
+        .jssora22l                  (normal)
+        .jssora22r                  (normal)
+        .jssora22l:hover            (normal mouseover)
+        .jssora22r:hover            (normal mouseover)
+        .jssora22l.jssora22ldn      (mousedown)
+        .jssora22r.jssora22rdn      (mousedown)
+        .jssora22l.jssora22lds      (disabled)
+        .jssora22r.jssora22rds      (disabled)
+        */
+
+         .jssora22l { background-position: -10px -31px; }
+        .jssora22r { background-position: -70px -31px; }
+        .jssora22l:hover { background-position: -130px -31px; }
+        .jssora22r:hover { background-position: -190px -31px; }
+        .jssora22l.jssora22ldn { background-position: -250px -31px; }
+        .jssora22r.jssora22rdn { background-position: -310px -31px; }
+        .jssora22l.jssora22lds { background-position: -10px -31px; opacity: .3; pointer-events: none; }
+        .jssora22r.jssora22rds { background-position: -70px -31px; opacity: .3; pointer-events: none; }
+
+        h2{
+          color: #000 !important;
+        }
+        .index #testimonials h2 {
+    color: #000!important;
+    font-size: 24px;
+}
+.carousel-caption {
+    position: static;
+    /*background-color: #2890d3;*/
+    width: 36%;
+    font-weight: bold;
+    font-size: 30px!important;
+    margin-left: 55%;
+}
+.carousel-caption h3{
+    font-weight: 900;
+    font-size: 40px!important;
+    color: #2890d3!important;
+
+}
+
+.carousel-caption p{
+    font-weight: 600;
+    font-size: 30px!important;  
+}
+@media (max-width: 720px)
+{
+.carousel-caption h3{
+    font-weight: 900;
+    text-align: center;
+    
+    font-size: 20px!important;
+    color: #2890d3!important;
+
+}
+}
+
+@media (max-width: 720px)
+{
+.carousel-caption p{
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px!important;  
+}
+}
+    </style>
+    <div class="banner">
+         
+         <div class="row">  
+            <<!--carousel-news-->>  
+        </div>
+    </div>
+
+
+
+	<<!-BACKGROUND->>	
+
+	<div class="container client-test" id="bg">
+	
+        
+		<div id="top3">
+		<<!--cart-slider-->>
+		</div>
+	    <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+		<center>  <a href="./loans.html" class="a-btn">
+                         <span class="a-btn-symbol" style="font-size: 30px"><b>$</b></i></span> 
+                         <br><span class="a-btn-text">I'm feeling lucky &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+                     <span class="a-btn-slide-text">&nbsp;</span>
+                                        </a></center>
+		</div>
+        </div>
+		<hr class="featurette-divider">
+
+		<div class="row" id="testimonials">  
+			<center><h2> Last Testimonials </h2></center><br>
+			<<!--testimonials-->>
+		</div>		
+		<!--MODAL-ADD-REVIEW-->
+	</div>	 
+<!-- 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<script>
+$(document).ready(function(){
+    $(".state_adv_header").click(function(){
+        $(".state_adv").slideToggle("ytrr");
+    });
+
+});
+</script>
+	<div class="row afterdiv">
+		<<!-FOOTER->>
+	</div>
+  <style>
+    .state_adv{
+      display: none;
+    }
+    .ytrr{
+      display: block;
+    }
+    .carousel-indicators
+    {
+        display: none;
+    }
+  </style>	 
+</body>
+</html>

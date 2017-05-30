@@ -1,0 +1,20 @@
+﻿<!-- Indicators -->
+  <ol class="carousel-indicators">
+    {{range .Items}}<li data-target="#myCarousel" data-slide-to="{{.Num}}" class="{{.Class}}"></li>{{else}}{{end}}
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    {{range .Items}}<div class="item {{.Class}}">
+	<center>
+	 <img src="{{.Image}}" height="350px">
+	</center>
+	<div class="carousel-caption d-none d-md-block">
+          <h3>{{.Caption}}</h3>
+          <p>{{.TextHtml}}</p>
+        </div>
+    </div>
+	{{else}}
+	{{end}}
+
+  </div>

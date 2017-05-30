@@ -1,0 +1,82 @@
+<<!-HEADER->>
+<style> 
+/* for caching as this page contains a lot of data*/
+.right_adv {
+	display: none;
+}
+</style>
+<body class="v2 control">
+	<<!-BACKGROUND->>	
+
+	<<!-NAV->>
+	<div class="container grey3">
+		
+		<div class="row padding-top-20">
+			<center>
+				<select class="selectpicker">
+				  <option data-content="<img src='/images/autoloanarea.png' width='32px'/><span class='padding-left-10'>AutoLoanArea.com</span>">AutoLoanArea.com</option>			  
+				  <option disabled data-content="<img src='/images/Home_Loan_1.png ' width='32px'/><span class='padding-left-10'>HomeLoan.com</span>">HomeLoan.com</option>			  
+				  <option disabled data-content="<img src='/images/money_Loan_1.png ' width='32px'/><span class='padding-left-10'>BusinessLoan.com</span>">BusinessLoan.com</option>			  
+				  <option data-subtext="Not available yet" disabled>other</option>
+				</select>
+			</center><br>
+		</div>
+	
+				
+		
+		<div class="col-xs-12">  
+			<center><h2>All companies </h2>
+			<p style="font-size:16px; color:#fff;">To edit the company, please go to it's detailed page<br>Removing company is UNavailable. You can ONLY HIDE it in it's details page<p></center>
+			<div class="company pull-right padding-bottom-20 padding-right-20">					
+				<button type="button" class="btn btn-success" onclick="EditCompany(0);">Add Company</button>
+			</div>
+			
+			
+			<div class="row all_comments padding-right-20">  
+					<div class="row padding-left-20 padding-right-20 padding-bottom-20 loans">
+					<div id="companyGrid" style="width: 100%;">
+						<center>
+							<img src="/images/loading_circle_1.gif">
+						</center>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+		<!--MODAL-ADD-REVIEW-->
+		
+		<!--MODAL-EDIT-COMPANY-->						
+	</div>	
+
+		<div class="row">
+			<<!-FOOTER->>
+		</div>
+
+
+		<!--modal-loading-->
+	
+		<!-- modal window: parsing info-->
+		<div class="modal fade" id="parsingInfo" role="dialog" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-sm">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h4 class="modal-title" id="modal_title">Parsing info</h4>
+			</div>
+			<div class="modal-body">
+			  <h3><span id="percent">0</span> done...</h3>
+			  <p id="process"></p>
+			  <p id="errors"></p>
+			  <div class="modal-footer" id="closeParsing" style="display:none">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			   </div>
+			</div>
+		  </div>
+		</div>
+		</div>
+</body>
+<script type="text/javascript" src="/js/details.js"></script>
+<script type="text/javascript" src="/js/control.js"></script>
+<script type="text/javascript" src="/js/loans.js"></script>
+</html>

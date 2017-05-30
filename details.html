@@ -1,0 +1,322 @@
+<<!-HEADER->>
+<style>
+.arrow-down {
+	display: none;
+}
+#custom_state_styles
+{
+margin-top: -450px; z-index: 100000;padding-left: 10px; margin-right:-18px!important;
+}
+@media (max-width: 720px) {
+	.col-sm-8
+	{
+		width: 100%!important
+	}
+}
+span
+{
+	color: black!important;
+}
+.review
+{
+	background-color: #c5beb4;
+}
+.removeHover:hover
+{
+	background: white;important;
+}
+</style>
+<body class="v2 twobackimg">
+	<<!-BACKGROUND->>
+	<<!-NAV->>
+	<div class="container" style="background-color: #f9f9f9;">
+		<!--ADV-->
+		
+		<div class="details">
+			<div class="row firstrow">
+				<<!--ADMIN_DETAILS_COMPANY_CONTROL-->>
+				
+				<div class="padding-top-10 padding-bottom-10 padding-left-20 padding-right-20">
+					<div class="summary-item col-xs-12 col-sm-3 removeHover" style="height:100% ;padding:10px; margin-right: 2%; text-align: center!important;">
+						
+						<div class="photo">
+							<img src="{LOGO}" class="img-responsive" alt="{COMPANYNAME}" />
+						</div>
+						<div class="padding-top-20">
+							<div class="col-xs-6 col-sm-6" style="margin-right: -5px; margin-left: -8px;">
+								<a class="btn btn-md " href="{SITEURL}" style="display:{VISIT_SITE};width: 100px; background-color: #9cedef">VISIT SITE</a>
+							</div>
+							<div class="col-xs-6 col-sm-6">
+								<a class="btn btn-md  mapbutton" style="display:{SHOW_MAP}; background-color: #9cedef;text-shadow: 1px -1px 1px rgba(0,0,0,.3); width: 100px;color: rgba(10,150,10,0.7);" href="{MAPURL}">MAP</a>
+							</div>
+						</div>
+						<br>
+					</div>
+					<div class="summary-item col-xs-12 col-sm-8" style="padding: 20px; width: 73%;">
+						<div class="col-xs-12 col-sm-12">
+							
+							<div class="col-xs-12 col-sm-8">
+								<div class="row">
+									<h3 class="padding-left-40" style="color:#516f8c;">{COMPANYNAME}</h3>
+								</div>
+								<div class="row address padding-left-40"><h4>
+									<span itemprop="displayAddress">{DisplayAddress}</span>
+									<br><span itemprop="telephone" class="phone">{telephone}</span>
+								</h4></div>
+							</div>
+							
+							<div class="col-xs-12 col-sm-4" style="text-align: center">
+								
+								<span style="color: #eee; font-weight: 600; color:  #516f8c;">{COMPANYEST}</span>
+								<div class="row">
+									<div class="row">
+										<div class="stars stars-header">
+											<!-- <i class="price-text-color fa fa-star"></i>   -->
+											{STARS}
+										</div>
+									</div>
+									<div class="row reviews-header">
+										<a>{REVIEWSCOUNT}</a>
+									</div>
+									<div class="row padding-bottom-10 padding-top-10">
+										<a class="btn btn-sm btn-warning" onclick="WriteReview('{LOGO}','{COMPANYNAME}',{COMPANY_ID})">Write a Review</a>
+									</div>
+						 		</div>
+								
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<br>
+			<div class="container" style="margin-right: 5px!important">
+				<div class="summary-item featurestabs col-sm-12">
+				
+				<div class="padding-top-10 padding-bottom-10 padding-left-20 padding-right-20">
+					<h2 style="color:  #516f8c;">Features</h2>
+					<hr class="featurette-divider">
+						<ul class="nav nav-tabs padding-top-10 features-header" role="tablist">
+							<li role="presentation" class="active"><a href="#about" aria-controls="about" role="tab" data-toggle="tab">About</a></li>
+							<li role="presentation"><a href="#Summary" aria-controls="Summary" role="tab" data-toggle="tab">Summary</a></li>
+							<li role="presentation"><a href="#Borrowers" aria-controls="Borrowers" role="tab" data-toggle="tab">Eligible Borrowers</a></li>
+							<li role="presentation"><a href="#Features" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
+							<li role="presentation"><a href="#Timeline" aria-controls="Timeline" role="tab" data-toggle="tab">Funding Timeline</a></li>
+							<li role="presentation"><a href="#Fees" aria-controls="Fees" role="tab" data-toggle="tab">Fees</a></li>
+							<li role="presentation"><a href="#LoanType" aria-controls="LoanType" role="tab" data-toggle="tab">Loan Type</a></li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="about">
+								<div>
+									<span itemprop="description">
+										{ABOUT}
+									</span>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="Summary">
+								<div class="row">
+									<div class="col-xs-6">
+										<div class="row padding-top-30">
+											<span>Credit Bureau Reporting</span>
+											<span class="company_details_subtext">{CreditBureauReporting}</span>
+										</div>
+										<div class="row padding-top-40">
+											<span>Loan Amount</span><span class="conpany_details_percent_str">{LoanAmount}</span>
+										</div>
+										<div class="row padding-top-40 padding-bottom-20"  style="color: black">
+											<span>Payment Options:</span><span class="company_details_subtext">{PaymentOptionsText}</span>
+										</div>
+									</div>
+									<div class="col-xs-6"> 
+										<div class="row padding-top-30">
+											<span>APR:</span><span class="conpany_details_percent_str">{APR}</span>
+										</div>
+										<div class="row padding-top-40">
+											<span> Min APR:</span><span class="conpany_details_percent_str">{MinAPR}</span>
+										</div>
+										<div class="row padding-top-40 padding-bottom-20">
+											<span>Max Loan Term (Months)</span><span class="conpany_details_percent_str">{MaxLoanTermMonthsText}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="Borrowers">
+								<div class="row">
+									<div class="col-xs-6">
+										<div class="row padding-top-30">
+											<span>Checking Account Required?</span><span class="yesno">{CheckingAccountRequired}</span>
+										</div>
+										<div class="row padding-top-40 padding-bottom-20">
+											<span>Lend To Military?</span><span class="yesno">{LendToMilitary}</span>
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div class="row padding-top-30">
+											<span>Immigration Status Requirements:</span><span class="company_details_subtext">{ImmigrationStatusRequirementsText}</span>
+										</div>
+										<div class="row padding-top-40">
+											<span>Minimum Age:</span><span class="conpany_details_percent_str">{MinimumAge}</span>
+										</div>
+										<div class="row padding-top-40 padding-bottom-20">
+											<span>Verification Documents Required:</span><span class="company_details_subtext">{VerificationDocumentsRequired}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="Features">
+								<div class="row">
+									<div class="col-xs-6">
+										<div class="row padding-top-30">
+											<span>Customizable Payment Dates</span><span class="yesno">{CustomizablePaymentDates}</span>
+										</div>
+										<div class="row padding-top-40">
+											<span>Joint Loans Available</span><span class="yesno">{JointLoansAvailable}</span>
+										</div>
+										<div class="row padding-top-40">
+											<span>No Origination Fee</span><span class="yesno">{NoOriginationFee}</span>
+										</div>
+										<div class="row padding-top-40 padding-bottom-20">
+											<span>Pre-Approved Soft Credit Inquiry</span><span class="yesno">{PreApprovedSoftCreditInquiry}</span>
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div class="row padding-top-30 padding-bottom-20">
+											<span>Approval Speed (Hours)</span><span class="conpany_details_percent_str">{ApprovalSpeedHours}</span>
+										</div>
+										<div class="row padding-top-30">
+											<span>Deferred Payments</span><span class="yesno">{DeferredPayments}</span>
+										</div>
+										<div class="row padding-top-40">
+											<span>No Late Fees</span><span class="yesno">{NoLateFees}</span>
+										</div>
+										<div class="row padding-top-40 padding-bottom-20">
+											<span>No Prepayment Fee</span><span class="yesno">{NoPrepaymentFee}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="Timeline">
+								<div class="row">
+									<div class="col-xs-6">
+										<div class="row padding-top-30">
+											<span>Minutes</span><span class="yesno">{Minutes}</span>
+										</div>
+										<div class="row padding-top-40 padding-bottom-20">
+											<span>1-7 days</span><span class="yesno">{Days17}</span>
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div class="row padding-top-30">
+											<span>Same Day</span><span class="yesno">{SameDay}</span>
+										</div>
+										<div class="row padding-top-40 padding-bottom-20">
+											<span>2-4 weeks</span><span class="yesno">{Weeks24}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="Fees">
+								<div class="row">
+									<div class="col-xs-6">
+										<div class="row padding-top-30 padding-bottom-20">
+											<span>Application Fee</span><span class="conpany_details_percent_str">{ApplicationFee}</span>
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div class="row padding-top-30">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="LoanType">
+								<div class="row">
+									<div class="col-xs-6">
+										<div class="row padding-top-30">
+											<span>Lease Purchase</span><span class="yesno">{LeasePurchase}</span>
+										</div>
+										<div class="row padding-top-40">
+											<span>Refinance</span><span class="yesno">{Refinance}</span>
+										</div>
+										<div class="row padding-top-40 padding-bottom-20">
+											<span>Institution Type</span><span class="company_details_subtext">{InstitutionType}</span>
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div class="row padding-top-30">
+											<span>New Loan</span><span class="yesno">{NewLoan}</span>
+										</div>
+										<div class="row padding-top-40 padding-bottom-20">
+											<span>Used Car Loan</span><span class="yesno">{UsedCarLoan}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="container" style="margin-right: 5px!important">
+				<div class="col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 padding-top-10">
+					<p style="text-align:right;font-size:15px;color:#ccc;"><i>AutoLoanArea.com is an independent, advertising-supported service. The owner of this website may be compensated in exchange for featured placement of certain sponsored products and services, or your clicking on links posted on this website. <a href="#footer">Read more...</a></i></p>
+				</div>
+			</div>
+
+			<div class="container" style="margin-right: 5px!important">
+			<div class="summary-item col-sm-12 reviews padding-top-10">
+				
+		
+				<div class="padding-top-10 padding-bottom-10 padding-left-20 padding-right-20">
+					<h2 style="color:  #516f8c;">Reviews</h2>
+					<hr class="featurette-divider">
+					
+						<!--{REVIEWS_ADMIN_CONTROL_HEADER}-->
+						
+						<!--{REVIEW_LIST}-->
+						
+						<div class="row">
+							<div class="pull-right padding-right-20 padding-bottom-10">
+								<a class="btn btn-warning" onclick="WriteReview('{LOGO}','{COMPANYNAME}',{COMPANY_ID})">Write a Review</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="container" style="margin-right: 5px!important">
+				<div class="summary-item company col-sm-12">
+				
+				<div class="padding-top-10 padding-bottom-10 padding-left-20 padding-right-20">
+					<h2 style="color:  #516f8c;">Best auto loan companies</h2>
+					<hr class="featurette-divider">
+					
+					
+						<<!--cart-slider-all-->>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<!--MODAL-ADD-REVIEW-->
+		<!--MODAL-VOTE-REVIEW-->
+		
+		<!--MODAL-EDIT-COMPANY-->
+		
+		<!--modal-loading-->
+	</div>
+	<div class="row afterdiv">
+		<<!-FOOTER->>
+	</div>
+	<script>
+	$(document).ready(function(){
+	$(".state_adv_header").click(function(){
+	$(".state_adv").slideToggle("ytrr");
+	});
+	});
+	</script>
+</body>
+<script type="text/javascript" src="/js/details.js"></script>
+</html>

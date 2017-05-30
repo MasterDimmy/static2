@@ -1,0 +1,130 @@
+<<!-HEADER->>
+<style> 
+/* for caching as this page contains a lot of data*/
+.right_adv {
+	display: none;
+}
+</style>
+<body class="v2 control">
+	<<!-BACKGROUND->>	
+
+	<<!-NAV->>
+	<div class="container grey3">
+		
+		<div class="row padding-top-20">
+			<center>
+				<select class="selectpicker">
+				  <option data-content="<img src='/images/autoloanarea.png' width='32px'/><span class='padding-left-10'>AutoLoanArea.com</span>">AutoLoanArea.com</option>			  
+				  <option disabled data-content="<img src='/images/Home_Loan_1.png ' width='32px'/><span class='padding-left-10'>HomeLoan.com</span>">HomeLoan.com</option>			  
+				  <option disabled data-content="<img src='/images/money_Loan_1.png ' width='32px'/><span class='padding-left-10'>BusinessLoan.com</span>">BusinessLoan.com</option>			  
+				  <option data-subtext="Not available yet" disabled>other</option>
+				</select>
+			</center><br>
+		</div>
+	
+		<div class="row padding-left-20 padding-right-20 padding-top-20 padding-bottom-20">
+			<div class="col-xs-12 padding-bottom-20">
+				<div class="summary-item control_item">
+					<div class="row padding-left-20">
+						<label for="next_parse">Basic parsing URL: <span>{BASIC_PARSING_URL}</span></label> 
+					</div>
+					<div class="row padding-left-20">
+						<label for="next_parse">Parsing connect timeout: <span>{PARSING_TIMEOUT}</span></label> 
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-xs-3">
+				<div class="summary-item control_item">
+					<div class="row padding-left-20">
+						<label for="next_parse">Total companies: <span>{COMPANY_COUNT}</span></label> 
+					</div>
+					<div class="row padding-left-20">
+						<label for="next_parse">Total reviews: <span>{TOTAL_REVIEWS}</span></label> 
+					</div>						
+				</div>
+			</div>
+			
+			<div class="col-xs-5">
+				<div class="summary-item control_item">
+					<div class="row padding-left-20">
+						<label for="next_parse">Last original review: <span>{LAST_ORIGINAL_REVIEW}</span></label> 
+					</div>
+					<div class="row padding-left-20">
+						<label for="next_parse">Last our review: <span>{LAST_OUR_REVIEW}</span></label> 
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-xs-4">
+				<div class="summary-item control_item">
+					<div class="row padding-left-20">
+						<label for="next_parse">Last parsing: <span>{LAST_PARSING}</span></label> 
+					</div>
+					<div class="row padding-left-20">
+						<label for="next_parse">Last parsing state: <span>{LAST_PARSING_STATE}</span></label> 
+					</div>
+					<div class="row padding-left-20">
+						<label for="next_parse">Last parsing error: <span>{LAST_PARSING_ERROR}</span></label> 
+					</div>
+					<div class="row padding-left-20">
+						<label for="next_parse">Next parsing: <span>{NEXT_PARSING}</span></label> 
+					</div>
+					<div class="row padding-left-20">
+						<div class="pull-right padding-right-20 padding-top-10">
+							<a class="btn btn-success" onclick="RunParse()">Run now</a>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		
+		<div class="row all_comments">  
+			<center><h2> All user comments </h2>
+			<p style="font-size:16px; color:#fff;">To see or edit custom company comments please use their own description page</p><br>
+			</center>
+
+			<!--{REVIEWS_ADMIN_CONTROL_HEADER}-->
+			
+			<div class="row">
+			<div class="padding-top-10 padding-bottom-10 padding-left-20 padding-right-20">
+			<div class="company-box company col-sm-12 reviews padding-top-10">
+				<!--{REVIEW_LIST}-->
+				
+			</div>
+			</div>
+			</div>
+		</div>
+		
+		<!--MODAL-ADD-REVIEW-->		
+	</div>	
+
+		<div class="row">
+			<<!-FOOTER->>
+		</div>
+
+
+		<!--modal-loading-->
+	
+		<!-- modal window: parsing info-->
+		<div class="modal fade" id="parsingInfo" role="dialog" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-sm">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h4 class="modal-title" id="modal_title">Parsing info</h4>
+			</div>
+			<div class="modal-body">
+			  <h3><span id="percent">0</span> done...</h3>
+			  <p id="process"></p>
+			  <p id="errors"></p>
+			  <div class="modal-footer" id="closeParsing" style="display:none">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			   </div>
+			</div>
+		  </div>
+		</div>
+		</div>
+</body>
+<script type="text/javascript" src="/js/details.js"></script>
+<script type="text/javascript" src="/js/control.js"></script>
+</html>

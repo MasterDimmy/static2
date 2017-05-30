@@ -1,0 +1,5 @@
+ {{range .Items}}
+	<div class="state_adv" onclick="window.location.href='/state.html?id={{.Id}}'">
+		[{{.ShortName}}] {{.Name}} - ({{.Count}})
+	</div>
+ {{else}}{{end}}

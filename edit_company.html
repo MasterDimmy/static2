@@ -1,0 +1,382 @@
+		<div class="modal fade" id="editCompanyModal" role="dialog" data-keyboard="true" data-backdrop="static" tabindex='-1'>
+		<div class="modal-dialog addreview modal-lg">
+		<div class="modal-content">
+		  
+			<div class="modal-header">
+			  <h4 class="modal-title" id="modal_title">Admin EDIT COMPANY ZONE for <h3>{COMPANYNAME}</h3></h4>
+			  
+			</div>
+			<div class="modal-body">
+			
+				<div id="editCompanyForm"></div>
+				<div id="editCompanyForm2" style="display:none">
+					<div class="form-horizontal padding-bottom-20">
+						<div class="form-group"><div class="control-group">
+							<label for="companyShow" class="col-md-4 control-label" style="color:green">
+							SHOW COMPANY?</label>
+							<div class="col-md-1">
+								<input type="checkbox" class="form-control" id="companyShow" name="Show"/>
+							</div>
+						</div></div>												
+						
+						<div class="form-group"><div class="control-group">
+							<label for="companyBLISTING_ID" class="col-md-4 control-label">
+							Unique Inner BlistingId</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="companyBLISTING_ID" value="{BLISTING_ID}" disabled/>
+							</div>
+						</div></div>
+						
+						<div class="form-group"><div class="control-group">
+							<label for="companyFetchedStr" class="col-md-4 control-label">
+							Last Parsing</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="companyFetchedStr" value="{COMPANY_FETCHED_STR}" disabled/>
+							</div>
+						</div></div>
+					
+						<div class="form-group"><div class="control-group">
+							<label for="companyName" class="col-md-4 control-label">
+							Company Name<a href="#" style="color:red;">*</a></label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" name="Name" id="companyName" placeholder="{COMPANYNAME}" />
+							</div>
+						</div></div>						
+						<div class="form-group"><div class="control-group">
+								<img title="Displayed logo for company" src="{LOGO}" id="editLogo" style="position:fixed; display:inline; left:40px; border: 1px solid black;">
+								<label for="companyEst" class="col-md-4 control-label">
+								Est.<a href="#" style="color:red;">*</a> </label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="Est" id="companyEst" placeholder="Year, when company was estimated" />
+								</div>
+						</div></div>
+						<div class="form-group"><div class="control-group">	
+								<label for="companyLogoFile" class="col-md-4 control-label">
+								Logo<a href="#" style="color:red;">*</a></label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="LogoFile" id="LogoFile" placeholder="Internet or local webserver link to the company logo image" onChange="logoUrlChanged()" title="Press ENTER after editing"/>
+								</div>							
+						</div></div>
+						
+						<h3>Contact data</h3>							
+						<div class="edit_company_block">
+							<div class="form-group"><div class="control-group">
+								<label for="coompanyURL" class="col-md-4 control-label">
+								Company Site URL<a href="#" style="color:red;">*</a></label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="SiteURL" id="coompanyURL" placeholder="{SITEURL}" />
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyAddressCountry" class="col-md-4 control-label">
+								Company Address Country<a href="#" style="color:red;">*</a></label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="AddressCountry" id="companyAddressCountry" placeholder="{addressCountry}" >
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyAddressRegion" class="col-md-4 control-label">
+								Company Address Region<a href="#" style="color:red;">*</a></label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="AddressRegion" id="companyAddressRegion" placeholder="{addressRegion}" >
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyAddressLocality" class="col-md-4 control-label">
+								Company Address Locality<a href="#" style="color:red;">*</a></label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="AddressLocality" id="companyAddressLocality" placeholder="{addressLocality}">
+								</div>
+							</div></div>						
+							<div class="form-group"><div class="control-group">
+								<label for="companyStreetAddress" class="col-md-4 control-label">
+								Company Street Address<a href="#" style="color:red;">*</a></label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="StreetAddress" id="companyStreetAddress" placeholder="{streetAddress}">
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyPostalCode" class="col-md-4 control-label">
+								Company Postal Code<a href="#" style="color:red;">*</a></label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="PostalCode" id="companyPostalCode" placeholder="{postalCode}" >
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyTelephone" class="col-md-4 control-label">
+								Company Telephone<a href="#" style="color:red;">*</a></label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="Telephone" id="companyTelephone" placeholder="{telephone}" >
+								</div>
+							</div></div>
+						</div>
+						
+						<h3>About</h3>
+						<div class="edit_company_block">
+							<div class="form-group"><div class="control-group">
+								<label for="companyAbout" class="col-md-4 control-label">
+								Company About</label>
+								<div class="col-md-8">									
+									<textarea class="form-control" rows="5" name="AboutText" id="companyAbout" placeholder="Text about company in HTML encoding. 
+Example: ;<h1>header</h1> <p>some text</p> <h1>header</h1> <p>some text</p> <p>some text</p>" ></textarea>
+								</div>
+							</div></div>
+						</div>
+						
+						<h3>Summary</h3>							
+						<div class="edit_company_block">
+							<div class="form-group"><div class="control-group">
+								<label for="companyCreditBureauReporting" class="col-md-4 control-label">
+								Credit Bureau Reporting</label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="CreditBureauReporting" id="companyCreditBureauReporting" placeholder="Equifax; Experian; TransUnion; Other via ;">	
+								</div>
+							</div></div>							
+							<div class="form-group"><div class="control-group">
+								<label for="companyLoanAmount" class="col-md-4 control-label">
+								Loan Amount <a href="#" style="color:red;" title="Leave 0-0 if you want to set empty Loan Value">*</a></label>
+								<div class="col-md-8">
+									<div class="col-md-4" style="padding-left:0">
+										<input type="text" class="form-control" name="LoanAmount_min" id="companyLoanAmount" placeholder="$50">
+									</div>
+									<div class="col-md-2">
+										<hr style="border: 1px solid #333; margin-top: 15px;">
+									</div>
+									<div class="col-md-4">										
+										<input type="text" class="form-control" name="LoanAmount_max" id="companyLoanAmount" placeholder="$20000">
+									</div>									
+								</div>
+							</div></div>							
+							<div class="form-group"><div class="control-group">
+								<label for="companyPaymentOptions" class="col-md-4 control-label">
+								Payment Options</label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="PaymentOptionsText" id="companyPaymentOptions" placeholder="Automatic Payments;Check by mail;">
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyAPR" class="col-md-4 control-label">
+								APR<a href="#" style="color:red;" title="Leave 0-0 if you want to set empty APR">*</a></label>
+								<div class="col-md-8">
+									<div class="col-md-4" style="padding-left:0">
+										<input type="text" class="form-control" name="APR_min" id="companyAPR_min" placeholder="0.5%">
+									</div>
+									<div class="col-md-2">
+										<hr style="border: 1px solid #333; margin-top: 15px;">
+									</div>
+									<div class="col-md-4">										
+										<input type="text" class="form-control" name="APR_max" id="companyAPR_max" placeholder="20%">
+									</div>									
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyMaxLoanTermMonths" class="col-md-4 control-label">
+								Max Loan Term (Months)</label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="MaxLoanTermMonthsText" id="companyMaxLoanTermMonths" placeholder="{MaxLoanTermMonthsText}">
+								</div>
+							</div></div>
+						</div>					
+						
+						<h3>Borrowers</h3>
+						<div class="edit_company_block">
+							<div class="form-group"><div class="control-group">
+								<label for="companyCheckingAccountRequired" class="col-md-4 control-label">
+								Checking Account Required?</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="CheckingAccountRequired" id="companyCheckingAccountRequired" placeholder="{CheckingAccountRequired}">
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyLendToMilitary" class="col-md-4 control-label">
+								Lend To Military?</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="LendToMilitary" id="companyLendToMilitary" placeholder="{LendToMilitary}">
+								</div>
+							</div></div>		
+							<div class="form-group"><div class="control-group">
+								<label for="companyVerificationDocumentsRequired" class="col-md-4 control-label">
+								Verification Documents Required</label>
+								<div class="col-md-8">
+									<textarea class="form-control" rows="5" name="VerificationDocumentsRequired" id="companyVerificationDocumentsRequired" placeholder="Driver license (or other photo ID); Proof of citizenship/residence;" ></textarea>
+								</div>
+							</div></div>	
+							<div class="form-group"><div class="control-group">
+								<label for="companyImmigrationStatusRequirementsText" class="col-md-4 control-label">
+								Immigration Status Requirements</label>
+								<div class="col-md-8">
+									<textarea class="form-control" rows="5" name="ImmigrationStatusRequirementsText" id="companyImmigrationStatusRequirementsText" placeholder="Must be U.S. Citizen; Must be U.S. Permanent Resident" ></textarea>
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyMinimumAge" class="col-md-4 control-label">
+								Minimum Age</label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="MinimumAge" id="companyMinimumAge" placeholder="{MinimumAge}">
+								</div>
+							</div></div>							
+						</div>
+						
+						<h3>Features</h3>
+						<div class="edit_company_block">
+							<div class="form-group"><div class="control-group">
+								<label for="companyCustomizablePaymentDates" class="col-md-4 control-label">
+								Customizable Payment Dates</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="CustomizablePaymentDates" id="companyCustomizablePaymentDates" placeholder="{CustomizablePaymentDates}" >
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyJointLoansAvailable" class="col-md-4 control-label">
+								Joint Loans Available</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="JointLoansAvailable" id="companyJointLoansAvailable" placeholder="{JointLoansAvailable}">
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyNoOriginationFee" class="col-md-4 control-label">
+								No Origination Fee</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="NoOriginationFee" id="companyNoOriginationFee" placeholder="{NoOriginationFee}" >
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyPreApprovedSoftCreditInquiry" class="col-md-4 control-label">
+								Pre-Approved Soft Credit Inquiry</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="PreApprovedSoftCreditInquiry" id="companyPreApprovedSoftCreditInquiry" placeholder="{PreApprovedSoftCreditInquiry}">
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyDeferredPayments" class="col-md-4 control-label">
+								Deferred Payments</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="DeferredPayments" id="companyDeferredPayments" placeholder="{DeferredPayments}" >
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyNoLateFees" class="col-md-4 control-label">
+								No Late Fees</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="NoLateFees" id="companyNoLateFees" placeholder="{NoLateFees}">
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyNoPrepaymentFee" class="col-md-4 control-label">
+								No Prepayment Fee</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="NoPrepaymentFee" id="companyNoPrepaymentFee" placeholder="{NoPrepaymentFee}">
+								</div>
+							</div></div>
+						</div>
+												
+						<h3>Timeline</h3>
+						<div class="edit_company_block">
+							<div class="form-group"><div class="control-group">
+								<label for="companyMinutes" class="col-md-4 control-label">
+								Minutes</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="Minutes" id="companyMinutes" placeholder="{Minutes}" >
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyDays17" class="col-md-4 control-label">
+								1-7 days</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="Days17" id="companyDays17" placeholder="{Days17}" >
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companySameDay" class="col-md-4 control-label">
+								Same Day</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="SameDay" id="companySameDay" placeholder="{SameDay}" >
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyWeeks24" class="col-md-4 control-label">
+								2-4 weeks</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="Weeks24" id="companyWeeks24" placeholder="{Weeks24}">
+								</div>
+							</div></div>
+						</div>
+												
+						<h3>Fees</h3>
+						<div class="edit_company_block">
+							<div class="form-group"><div class="control-group">
+								<label for="companyApplicationFee" class="col-md-4 control-label">
+								Application Fee<a href="#" style="color:red;">*</a></label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="ApplicationFee" id="companyApplicationFee" placeholder="Any int value without $ symbol">
+								</div>
+							</div></div>
+						</div>
+								
+						<h3>LoanType</h3>
+						<div class="edit_company_block">
+							<div class="form-group"><div class="control-group">
+								<label for="companyLeasePurchase" class="col-md-4 control-label">
+								Lease Purchase</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="LeasePurchase" id="companyLeasePurchase" placeholder="{LeasePurchase}" >
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyRefinance" class="col-md-4 control-label">
+								Refinance</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="Refinance" id="companyRefinance" placeholder="{Refinance}">
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyInstitutionType" class="col-md-4 control-label">
+								Institution Type<a href="#" style="color:red;">*</a></label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" name="InstitutionType" id="companyInstitutionType" placeholder="{InstitutionType}">
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyNewLoan" class="col-md-4 control-label">
+								New Loan</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="NewLoan" id="companyNewLoan" placeholder="{NewLoan}">
+								</div>
+							</div></div>
+							<div class="form-group"><div class="control-group">
+								<label for="companyUsedCarLoan" class="col-md-4 control-label">
+								Used Car Loan</label>
+								<div class="col-md-1">
+									<input type="checkbox" class="form-control" name="UsedCarLoan" id="companyUsedCarLoan" placeholder="{UsedCarLoan}">
+								</div>
+							</div></div>
+						</div>
+												
+						<h3>Benefits</h3>
+						<div class="edit_company_block">
+							<div class="form-group"><div class="control-group">
+								<label for="companyApprovalSpeedHours" class="col-md-4 control-label">
+								Approval Speed (Hours)</label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="ApprovalSpeedHours" id="companyApprovalSpeedHours" placeholder="{ApprovalSpeedHours}">
+								</div>
+							</div></div>
+						</div>
+												
+						<div class="row">						
+						<div class="col-md-12">
+							<div class="pull-right">
+								<button type="button" class="btn btn-success" name="save">Save</button>
+								<button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+							</div>
+						</div>
+						</div>
+						
+					</div>
+				</div>
+			
+			</div>
+		
+		</div>
+		</div>
+		</div>

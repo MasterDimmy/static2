@@ -1,0 +1,38 @@
+<div class="row padding-bottom-20 padding-left-20 padding-right-20"><div id="review_{REVIEW_ID}_show" class="summary-item company col-xs-12 review" style="{REVIEW_ADMIN_COLOR}">
+	<div class="row">
+		<div class="col-xs-6 col-sm-3 padding-top-20">
+			<div class="inline-block padding-left-10">
+				<div class="avatar">
+					<p><span class="glyphicon glyphicon-user"></span></p>
+				</div>
+				<h4 id="review_{REVIEW_ID}_author">{REVIEW_AUTHOR}</h4>
+			</div>
+		</div>
+		<div class="col-xs-6  col-sm-6 padding-top-20 updown_row">
+			<a class="updown red" onclick="ReviewThumbsUp({REVIEW_ID},-1);">
+				<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>&nbsp;
+				<i id="review_{REVIEW_ID}_down">{REVIEW_DOWNS}</i>
+			</a>
+			<a class="updown green" onclick="ReviewThumbsUp({REVIEW_ID},1);">
+				<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;
+				<i id="review_{REVIEW_ID}_up">{REVIEW_UPS}</i>
+			</a>
+		</div>
+		<div class="col-xs-12 col-sm-3 padding-top-20">
+			<div class="pull-right stars_n_date padding-right-20">
+				<span class="stars" id="review_stars_{REVIEW_ID}">
+					{REVIEW_STARS}
+				</span>
+				<span class="posted_date">
+					<p>{REVIEW_DATE}</p>
+				</span>
+			</div>
+		</div>
+	</div>
+	<<!--REVIEW-DETAILS-CONTROL-->>	
+	<div class="review_text">
+		<p id="review_text_{REVIEW_ID}">{REVIEW_TEXT}</p>
+	</div>
+</div></div>
+				
+			
